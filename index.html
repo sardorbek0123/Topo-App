@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>To Do</title>
+  </head>
+  <body hidden>
+    <section class="container">
+      <header class="header" id="header">
+        <div class="header__title">todo</div>
+        <img
+          src="images/Moon.svg"
+          alt="moon"
+          class="theme__changer"
+          id="themechanger"
+          onclick="changeTheme(alt)"
+        />
+      </header>
+
+      <div class="todo__list">
+        <div class="create__task">
+          <div class="check__icon hidden">
+            <input type="checkbox" id="checkbox" class="hidden__checkbox" />
+            <label for="checkbox" class="my-label"></label>
+          </div>
+
+          <input
+            type="text"
+            class="create__task__input"
+            placeholder="Create a new todo"
+            id="createTask"
+            onkeydown="if (event.key === 'Enter') createTask(value); "
+            oninput="this.value = capitalize(this.value)"
+          />
+        </div>
+
+        <div class="task__list">
+          <ul id="task__list"></ul>
+
+          <div class="todo__btns">
+            <div class="todo__btns__filter">
+              <div class="todo__btns__counter">
+                <div id="counter"></div>
+              </div>
+              <div class="todo__btns__sort">
+                <span class="todo__btn active" onclick="showAll()" id="todoAll"
+                  >All</span
+                >
+                <span class="todo__btn" onclick="showActive()" id="todoActive"
+                  >Active</span
+                >
+                <span
+                  class="todo__btn"
+                  onclick="showCompleted()"
+                  id="todoCompleted"
+                  >Completed</span
+                >
+              </div>
+            </div>
+
+            <div class="todo__btn" onclick="clearCompleted()">
+              Clear Completed
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="cool.js" defer></script>
+  </body>
+</html>

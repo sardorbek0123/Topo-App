@@ -1,0 +1,183 @@
+:root {
+  --themeColor: #ffffff;
+  --textColor: #393a4b;
+  --borderColor: #e3e4f1;
+  --todoBtnsColor: #9495A5;
+  --boxShadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans", sans-serif;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+body {
+  background-color: #f2f2f2;
+  font-family: "Josefin Sans", sans-serif;
+  background-image: url(images/Light.svg);
+  background-size: cover;
+  height: 300px;
+  background-repeat: no-repeat;
+}
+
+.container {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 40px;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+  color: #ffffff;
+}
+
+.theme__changer {
+  cursor: pointer;
+}
+
+.todo__list {
+  margin-top: 48px;
+}
+
+.create__task {
+  display: flex;
+
+  width: 540px;
+  height: 64px;
+  background: var(--themeColor);
+  box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.check__icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.hidden {
+  cursor: default !important;
+}
+
+.create__task__input {
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+  background: var(--themeColor);
+  color: var(--textColor);
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.task__list {
+  background-color: var(--themeColor);
+  border-radius: 5px;
+  margin-top: 24px;
+
+  box-shadow: var(--boxShadow);
+
+}
+
+.task__list li {
+  list-style: none;
+
+}
+
+.checked {
+  text-decoration: line-through;
+  color: #9495A5;
+}
+
+.active {
+  color: #3A7CFD;
+}
+
+.new__task {
+  color: var(--textColor);
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid var(--borderColor);
+}
+
+.todo__btns {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 24px;
+  color: var(--todoBtnsColor);
+}
+
+.todo__btns__filter {
+  display: flex;
+  gap: 80px;
+}
+
+.todo__btns__counter {
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.todo__btns__sort  {
+  display: flex;
+  gap: 10px;
+}
+
+.todo__btn {
+  cursor: pointer;
+}
+
+
+
+.hidden__checkbox {
+  display: none;
+}
+
+.my-label {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #e3e4f1;
+  cursor: pointer;
+  margin: 8px 24px;
+  position: relative;
+  border-radius: 50%;
+  left: 10px;
+  top: 12px;
+}
+
+
+.check__icon>div>input:checked + .my-label:after {
+  content: "\2714";
+  width: 108%;
+  height: 108%;
+  display: block;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 50%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #55ddff 0%, #c058f3 100%);
+  border: none;
+}
+
+.delete__btn {
+  padding-right: 24px;
+  cursor: pointer;
+}
